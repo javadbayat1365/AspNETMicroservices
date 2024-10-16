@@ -20,6 +20,7 @@ namespace Catalog.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(List<Product>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(List<Product>), (int)HttpStatusCode.NotFound)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             var products = await _productsRepository.GetProducts();
